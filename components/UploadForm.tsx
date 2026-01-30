@@ -78,15 +78,15 @@ export default function UploadForm() {
 
     return (
         <div className="max-w-3xl mx-auto">
-            <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <div className="bg-white/50 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/60">
+                <h2 className="text-3xl font-bold mb-6 text-slate-800">
                     📹 Upload Traffic Video
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Camera ID */}
                     <div>
-                        <label htmlFor="cameraId" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="cameraId" className="block text-sm font-semibold text-slate-700 mb-2">
                             🎥 Camera ID
                         </label>
                         <input
@@ -94,7 +94,7 @@ export default function UploadForm() {
                             id="cameraId"
                             value={cameraId}
                             onChange={(e) => setCameraId(e.target.value)}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/50"
+                            className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-all bg-white/60 backdrop-blur-sm"
                             placeholder="e.g., CAM001"
                             disabled={uploading}
                         />
@@ -103,7 +103,7 @@ export default function UploadForm() {
                     {/* Location Fields */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label htmlFor="latitude" className="block text-sm font-semibold text-gray-700 mb-2">
+                            <label htmlFor="latitude" className="block text-sm font-semibold text-slate-700 mb-2">
                                 📍 Latitude
                             </label>
                             <input
@@ -112,14 +112,14 @@ export default function UploadForm() {
                                 value={latitude}
                                 onChange={(e) => setLatitude(e.target.value)}
                                 step="any"
-                                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/50"
+                                className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-all bg-white/60 backdrop-blur-sm"
                                 placeholder="-90 to 90"
                                 disabled={uploading}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="longitude" className="block text-sm font-semibold text-gray-700 mb-2">
+                            <label htmlFor="longitude" className="block text-sm font-semibold text-slate-700 mb-2">
                                 🌍 Longitude
                             </label>
                             <input
@@ -128,7 +128,7 @@ export default function UploadForm() {
                                 value={longitude}
                                 onChange={(e) => setLongitude(e.target.value)}
                                 step="any"
-                                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/50"
+                                className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-all bg-white/60 backdrop-blur-sm"
                                 placeholder="-180 to 180"
                                 disabled={uploading}
                             />
@@ -137,7 +137,7 @@ export default function UploadForm() {
 
                     {/* File Upload */}
                     <div>
-                        <label htmlFor="video" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="video" className="block text-sm font-semibold text-slate-700 mb-2">
                             🎬 Video File (MP4)
                         </label>
                         <div className="relative">
@@ -146,11 +146,11 @@ export default function UploadForm() {
                                 id="video"
                                 accept=".mp4,video/mp4"
                                 onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
-                                className="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/50 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+                                className="w-full px-4 py-3 border border-dashed border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-all bg-white/60 backdrop-blur-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200"
                                 disabled={uploading}
                             />
                             {videoFile && (
-                                <p className="mt-2 text-sm text-gray-600">
+                                <p className="mt-2 text-sm text-slate-600">
                                     ✓ Selected: {videoFile.name}
                                 </p>
                             )}
@@ -175,7 +175,7 @@ export default function UploadForm() {
                     <button
                         type="submit"
                         disabled={uploading}
-                        className="group relative w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 overflow-hidden"
+                        className="group relative w-full bg-slate-700/90 backdrop-blur-lg text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:bg-slate-800/90 border border-slate-600/50"
                     >
                         <span className="relative z-10 flex items-center justify-center gap-2">
                             {uploading ? (
@@ -192,7 +192,6 @@ export default function UploadForm() {
                                 </>
                             )}
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </button>
                 </form>
             </div>
